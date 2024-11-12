@@ -12,18 +12,19 @@ An example of writing mock-based unit tests with both infrastructure definition 
    ```bash
    $ python3 -m venv venv
    $ source venv/bin/activate
+   $ pulumi package add terraform-provider aviatrixsystems/aviatrix 3.2.0
    $ python -m pip install --upgrade pip
    $ python -m pip install -r requirements.txt
    ```
 
-2.  Run the tests:
+2. Run the tests:
 
-    ```
-    $ python -m pytest --disable-pytest-warnings # or simply `pytest --disable-pytest-warnings`
+   ```
+   $ python -m pytest --disable-pytest-warnings # or simply `pytest --disable-pytest-warnings`
 
-    ====================================================================================================== 3 passed, 6 warnings in 0.76s =======================================================================================================
+   ====================================================================================================== 3 passed, 6 warnings in 0.76s =======================================================================================================
 
-    ```
+   ```
 
 ## Further steps
 

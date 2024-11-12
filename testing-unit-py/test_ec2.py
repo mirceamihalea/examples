@@ -59,4 +59,14 @@ def test_security_group_rules():
         assert ssh_open is False, f'security group {urn} exposes port 22 to the Internet (CIDR 0.0.0.0/0)'
 
     # Return the results of the unit tests.
-    return pulumi.Output.all(infra.group.urn, infra.group.ingress).apply(check_security_group_rules)
+    return pulumi.Output.all(infra.group.urn, infra.group.ingress).apply(
+        check_security_group_rules
+    )
+
+
+@pulumi.runtime.test
+def test_account():
+    def check_id(args):
+        assert True
+
+    return pulumi.Output.all(infra.account.account_id).apply(check_id)
